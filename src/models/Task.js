@@ -17,6 +17,7 @@ const proyectSchema = new Schema(
     description: {
       type: String,
       required: true,
+      trim: String,
     },
     year: {
       type: Number,
@@ -25,10 +26,12 @@ const proyectSchema = new Schema(
     category: {
       type: String,
       required: true,
+      trim: String,
     },
     lang: {
       type: String,
       required: true,
+      trim: String,
     },
     image: {
       type: String,
@@ -40,5 +43,5 @@ const proyectSchema = new Schema(
     versionKey: false,
   }
 );
-
+//Nombre de la db que le dara: proyects en plural
 export default model("proyect", proyectSchema);

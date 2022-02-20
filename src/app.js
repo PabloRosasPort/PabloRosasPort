@@ -1,4 +1,4 @@
-import express from "express";
+import express, { urlencoded } from "express";
 import { engine } from "express-handlebars";
 import indexRoutes from "./routes/index.routes";
 import path from "path";
@@ -24,6 +24,7 @@ app.engine(
 );
 
 app.use(morgan("dev"));
+app.use(express.urlencoded({ extended: false }));
 app.set("view engine", ".hbs");
 //midellware
 app.use(indexRoutes);
