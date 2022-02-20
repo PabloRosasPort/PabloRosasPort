@@ -2,10 +2,13 @@
 import { Router } from "express";
 
 const router = Router();
-const Port = 3000;
 
 router.get("/", (req, res) => {
   res.render("index");
+});
+
+router.post("/task-add", (req, res) => {
+  res.send("agregar tarea");
 });
 
 router.get("/About", (req, res) => {
