@@ -1,36 +1,50 @@
 <h1>Agregar Tareas</h1>
 
 <form action="/task/add" method="post">
-  <div>
-    <label form="title">Escribe un titulo</label>
-    <input type="text" name="name" placeholder="title" id="title" />
+  <div class="mb-3">
+    <label for="name" class="form-label">Nombre del Proyecto</label>
+    <input name="name" class="form-control" id="name" aria-describedby="name" />
   </div>
 
-  <div>
-    <label for="description">Descripcion</label>
-    <textarea name="description" placeholder="description" id="description">
-    </textarea>
+  <div class="mb-3">
+    <label for="description" class="form-label">Describe el Proyecto</label>
+    <textarea
+      name="description"
+      class="form-control"
+      id="description"
+      aria-describedby="description"
+    ></textarea>
   </div>
 
-  <div>
-    <label form="title">Año</label>
-    <input type="number" name="year" placeholder="Año" id="año" />
+  <div class="mb-3">
+    <label for="year" class="form-label">Año del Proyecto</label>
+    <input name="year" class="form-control" id="year" aria-describedby="year" />
   </div>
 
-  <div>
-    <label form="title">Categoria</label>
-    <input type="text" name="category" placeholder="categoria" id="categoria" />
+  <div class="mb-3">
+    <label for="category" class="form-label">Categoria del Proyecto</label>
+    <input
+      name="category"
+      class="form-control"
+      id="category"
+      aria-describedby="category"
+    />
   </div>
 
-  <div>
-    <label form="title">Lenguaje</label>
-    <input type="text" name="lang" placeholder="lenguaje" id="lenguaje" />
+  <div class="mb-3">
+    <label for="lang" class="form-label">Lenguajes del Proyecto</label>
+    <input name="lang" class="form-control" id="lang" aria-describedby="lang" />
   </div>
 
-  <div>
-    <label form="title">Imagen</label>
-    <input type="text" name="image" placeholder="imagen" id="imagen" />
+  <div class="mb-3">
+    <label for="image" class="form-label">Imagen del Proyecto</label>
+    <input
+      name="image"
+      class="form-control"
+      id="image"
+      aria-describedby="image"
+    />
   </div>
 
-  <button>Save</button>
+  <button class="btn">Save</button>
 </form>
