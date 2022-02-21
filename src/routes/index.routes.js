@@ -1,19 +1,24 @@
 // Creo k este es mi *Controlador de Solicitudes archivo
 import { Router } from "express";
-import Task from "../models/Task";
+import Proyects from "../models/Task";
 
 const router = Router();
-
 router.get("/", (req, res) => {
-  res.render("index");
+  res.status(200).render("index");
 });
+//obteniendo lista de objetos de la db.
+router.get("/edit", async (req, res) => {
+  const proyectos = await Proyects.find().lean();
 
-router.post("/task/add", (req, res) => {
-  const task = Task(req.body);
+  res.render("edit", { proyectos: proyectos });
+});
+//Resibiendo datos de la vista y guardando en la db
+router.post("/edit", async (req, res) => {
+  const task = Proyects(req.body);
 
-  console.log(task);
+  await task.save();
 
-  res.send("guardado-bien chido");
+  res.redirect("/edit");
 });
 
 router.get("/About", (req, res) => {
