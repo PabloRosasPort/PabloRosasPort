@@ -1,7 +1,15 @@
 body {
-  background: rgb(226, 226, 191);
+  background: rgb(255, 255, 247);
 }
+.yo {
+  font-size: 30px;
 
+  color: #d6ddf8;
+}
+.nav1 {
+  font-size: 20px;
+  margin-left: auto;
+}
 .navbar2 {
   border-radius: 10px;
 }
@@ -125,7 +133,7 @@ button:active {
 .formproyect {
   background: #a1d4cf;
   height: 600px;
-  width: 600px;
+  width: 290px;
   padding: 30px;
   border-radius: 14px;
   display: flex;
@@ -350,4 +358,17 @@ button:hover {
   letter-spacing: 0.5em;
 }
 
-/*termona targeta 2*/
+/*termina targeta 2*/
+
+/*Crud de edit*/
+.crud {
+  height: 500px;
+  background: #d1d0d0;
+  border-radius: 13px;
+  margin: auto;
+  padding: 60px;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-evenly;
+}

@@ -1,0 +1,93 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <form action="/edit" method="post" id="formulario">
+        <div class="form0">
+          <div class="formproyect">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre del Proyecto</label>
+              <input
+                name="name"
+                class="form-control"
+                maxlength="888"
+                minlength="4"
+                type="text"
+                placeholder="Nombre"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Describe el Proyecto</label>
+              <textarea
+                class="form-control item"
+                type="text"
+                name="description"
+                maxlength="888"
+                minlength="4"
+                id="description"
+                placeholder="Descripcion"
+                required
+              ></textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="year" class="form-label">Año del Proyecto</label>
+              <input
+                name="year"
+                class="form-control item"
+                maxlength="12"
+                minlength="4"
+                id="year"
+                aria-describedby="year"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="category" class="form-label">Categoria del Proyecto</label>
+              <input
+                class="form-control item"
+                type="text"
+                maxlength="29"
+                minlength="1"
+                required
+                name="category"
+                id="category"
+                aria-describedby="category"
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="lang" class="form-label">Lenguajes del Proyecto</label>
+              <input
+                class="form-control item"
+                type="text"
+                maxlength="50"
+                minlength="4"
+                name="lang"
+                id="lang"
+                aria-describedby="lang"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="image" class="form-label">Imagen del Proyecto</label>
+              <input
+                name="image"
+                class="form-control"
+                id="image"
+                aria-describedby="image"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-success">Add</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

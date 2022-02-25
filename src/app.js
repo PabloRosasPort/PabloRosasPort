@@ -1,6 +1,9 @@
+//aqui es donde se configura express
+
 import express, { urlencoded } from "express";
 import { engine } from "express-handlebars";
 import indexRoutes from "./routes/index.routes";
+import bodyParser from "body-parser";
 import path from "path";
 import morgan from "morgan";
 
@@ -24,6 +27,8 @@ app.engine(
 );
 
 app.use(morgan("dev"));
+//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.set("view engine", ".hbs");
 //midellware

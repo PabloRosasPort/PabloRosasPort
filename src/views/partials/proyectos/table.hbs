@@ -1,0 +1,82 @@
+<!--Estos son los titulos de la tabla-->
+<!--<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Titulo</th>
+      <th>Descripcion</th>
+      <th>Año</th>
+      <th>Categoria</th>
+      <th>Lenguaje</th>
+      <th>Operacion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--Con un bucle recorro cada uno de las propiedades k vienes de db
+    {{#each proyectos}}
+      <tr>
+        <td>{{@index}}</td>
+        <td>{{name}}</td>
+        <td>{{description}}</td>
+        <td>{{year}}</td>
+        <td>{{category}}</td>
+        <td>{{lang}}</td>
+        <td>{{image}}</td>
+        <td>
+          <button class="btn btn-info">Done</button>
+          <button class="btn btn-danger">
+            <i class="bi bi-trash"></i>
+            Delete</button>
+
+          <a href="/edicion/{{_id}}" class="btn btn-primary">
+            <i class="bi bi-arrow-repeat"></i>
+            Update</a>
+
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>-->
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Titulo</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Año</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Lenguaje</th>
+      <th scope="col">Imagen</th>
+      <th scope="col">Operacion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!--Con un bucle recorro cada uno de las propiedades k vienes de db-->
+    {{#each proyectos}}
+      <tr>
+        <th scope="row">{{@index}}</th>
+        <td>{{name}}</td>
+        <td>{{description}}</td>
+        <td>{{year}}</td>
+        <td>{{category}}</td>
+        <td>{{lang}}</td>
+        <td>{{image}}</td>
+        <td>
+
+          <a href="/delete/{{_id}}" class="btn btn-danger">
+            Delete
+            <i class="bi bi-trash3"></i>
+          </a>
+
+          <a href="/edicion/{{_id}}" class="btn btn-primary">
+            Update
+            <i class="bi bi-arrow-repeat"></i>
+          </a>
+
+        </td>
+      </tr>
+    {{/each}}
+
+  </tbody>
+</table>

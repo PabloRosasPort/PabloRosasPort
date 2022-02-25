@@ -11,8 +11,6 @@ const proyectSchema = new Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
-      trim: String,
     },
     description: {
       type: String,
@@ -20,7 +18,7 @@ const proyectSchema = new Schema(
       trim: String,
     },
     year: {
-      type: Number,
+      type: String,
       required: true,
     },
     category: {

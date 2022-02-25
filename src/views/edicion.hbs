@@ -1,0 +1,121 @@
+<div class="container">
+  <div class="container">
+    <div class="container">
+      <div> <h1>Estas Actualizando:</h1></div>
+      <div class="container">
+        <div style="display: flex; ">
+          <span style="color: blue;">
+            <h2> {{projects.name}}<i class="bi bi-folder-symlink"></i></h2>
+          </span>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <!--Aqui en form digo a donde iran los datos de aki escribo-->
+      <form action="/edicion/{{projects._id}}" method="POST">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button href="/edicion/{{projects._id}}" class="btn btn-success">
+            Update
+            <i class="bi bi-arrow-repeat"></i>
+          </button>
+        </div>
+        <div class="form0">
+          <div class="formproyect">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre del Proyecto</label>
+              <input
+                maxlength="888"
+                minlength="4"
+                type="text"
+                name="name"
+                class="form-control"
+                id="name"
+                aria-describedby="name"
+                value="{{projects.name}}"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="description" class="form-label">Describe el Proyecto</label>
+              <textarea
+                maxlength="888"
+                minlength="4"
+                type="text"
+                name="description"
+                class="form-control"
+                id="description"
+                aria-describedby="description"
+                required
+              >{{projects.description}}</textarea>
+            </div>
+
+            <div class="mb-3">
+              <label for="year" class="form-label">Año del Proyecto</label>
+              <input
+                maxlength="888"
+                minlength="4"
+                type="text"
+                name="year"
+                class="form-control"
+                id="year"
+                aria-describedby="year"
+                value="{{projects.year}}"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="category" class="form-label">Categoria del Proyecto</label>
+              <input
+                maxlength="888"
+                minlength="4"
+                type="text"
+                name="category"
+                class="form-control"
+                id="category"
+                aria-describedby="category"
+                value="{{projects.category}}"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="lang" class="form-label">Lenguajes del Proyecto</label>
+              <input
+                maxlength="888"
+                minlength="4"
+                type="text"
+                name="lang"
+                class="form-control"
+                id="lang"
+                aria-describedby="lang"
+                value="{{projects.lang}}"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="image" class="form-label">Imagen del Proyecto</label>
+              <input
+                name="image"
+                class="form-control"
+                id="image"
+                aria-describedby="image"
+                value="{{projects.image}}"
+              />
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
