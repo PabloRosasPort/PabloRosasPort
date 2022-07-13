@@ -63,16 +63,38 @@
         <td>{{lang}}</td>
         <td>{{image}}</td>
         <td>
+          <div
+            class="container"
+            style="
+            
+               display: flex;
+               width: 200px;
+               justify-content:space-around;
+               aling-items: center;
+               "
+          >
+            <!-- <div style="padding: 10px;">
+              <a href="/profile/{{_id}}" class="btn btn-info">
+                Imagen
+                <i class="bi bi-cloud-arrow-up"></i>
+              </a>
+            </div>-->
+            <div style="padding: 10px;">
 
-          <a href="/delete/{{_id}}" class="btn btn-danger">
-            Delete
-            <i class="bi bi-trash3"></i>
-          </a>
+              <a href="/delete/{{_id}}" class="btn btn-danger">
+                Delete
+                <i class="bi bi-trash3"></i>
+              </a>
 
-          <a href="/edicion/{{_id}}" class="btn btn-primary">
-            Update
-            <i class="bi bi-arrow-repeat"></i>
-          </a>
+            </div>
+            <div style="padding: 10px;">
+              <a href="/edicion/{{_id}}" class="btn btn-primary">
+                Update
+                <i class="bi bi-arrow-repeat"></i>
+              </a>
+            </div>
+
+          </div>
 
         </td>
       </tr>

@@ -1,5 +1,7 @@
+import dotenv from "dotenv";
+dotenv.config();
 import app from "./app";
 import("./database");
-const Port = 3400;
-app.listen(Port);
-console.log(`Escuchando en el puerto ${Port}`);
+const PORTO = 4000;
+app.listen(PORTO);
+console.log(`Escuchando en el puerto ${PORTO}`);

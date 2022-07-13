@@ -1,10 +1,10 @@
-import { connect } from "mongoose";
+import mongoose from "mongoose";
+const MONGO_URI = process.env.MONGO_URI;
 
-(async () => {
-  try {
-    const db = await connect("mongodb://127.0.0.1:27017/crud-mongo");
-    console.log("DB connected to", db.connection.name);
-  } catch (error) {
-    console.log(error);
-  }
-})();
+// mongodb connection
+mongoose.connect(MONGO_URI);
+try {
+  console.log("Connected to MongoDB Atlas");
+} catch (error) {
+  console.log(error);
+}

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-6">
+
       <form action="/edit" method="post" id="formulario">
         <div class="form0">
           <div class="formproyect">
@@ -9,6 +10,7 @@
               <input
                 name="name"
                 class="form-control"
+                required
                 maxlength="888"
                 minlength="4"
                 type="text"
@@ -73,14 +75,9 @@
             </div>
 
             <div class="mb-3">
-              <label for="image" class="form-label">Imagen del Proyecto</label>
-              <input
-                name="image"
-                class="form-control"
-                id="image"
-                aria-describedby="image"
-                required
-              />
+              <p><label>Selecciona un nuevo archivo!</label></p>
+              <input name="image" type="file" id="image" required />
+              <div id="resultado"></div>
             </div>
 
             <button type="submit" class="btn btn-success">Add</button>

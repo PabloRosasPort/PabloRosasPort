@@ -1,42 +1,35 @@
-<h1>about</h1>
-<div class="botones">
-  <div class="boton1">
-    <button onClick="alert('¡Has hecho clic!')" class="btn">
-      Hover Me!
-    </button>
-  </div>
-  <div class="boton2">
-    <button onClick="alert('¡Has hecho clic!')" class="btn">
-      Hover Me!
-    </button>
-  </div>
-</div>
-<!--Trageta mia-->
-<div class="targetas">
-  <div class="box">
-    <span></span>
-    <div class="content">
-      <h2>Hover me!</h2>
-    </div>
-  </div>
-  <div class="card">
-    <div class="picture">
-      <p>IMAGE</p>
-    </div>
-    <div class="name">
-      <p>John Doe</p>
-    </div>
-    <div class="jobtitle">
-      <p>DEVELOPER</p>
-    </div>
-    <div class="buttons">
-      <div class="button1">
-        <button>Button 1</button>
-      </div>
-      <div class="button2">
-        <button>Button 2</button>
-      </div>
-    </div>
-  </div>
+<style>
+  .card { width: 300px; height: 350px; background: #22272e; border-radius: 10px;
+  text-align: center; color: #f0f0f0; font-family: inherit; z-index: 1; } .img {
+  display: flex; margin: 60px auto 10px auto; width: 85px; height: 85px; border:
+  1px solid #f0f0f0; border-radius: 50%; font-size: 11px; justify-content:
+  center; align-items: center; transition: all 0.5s; z-index: 99; } p { opacity:
+  0; transition: all 0.5s; } h1 { padding: 10px; font-weight: 500; font-size:
+  18px; } svg { padding: 0 5px; cursor: pointer; } .card:hover .img { transform:
+  scale(1.1); border: 1px solid #f0f0f0; } .card:hover h1, .card:hover p {
+  opacity: 1; }
+</style>
 
+<!--*********************************-->
+
+<style>
+  .contenedor{ height: 500px; margin: auto; display: flex; justify-content:
+  center; align-items: center;}
+</style>
+<div class="container">
+  <div class="contenedor">
+    <div class="card">
+      <div class="img">Image<br /> here</div>
+      <br />
+      <br />
+      <h1>Pablo Rosas Portillo</h1>
+      <p>
+        <br />
+        <a href="#"><i class="bi bi-facebook"></i></a>
+        <i class="bi bi-youtube"></i>
+        <i class="bi bi-whatsapp"></i>
+        <br />
+      </p>
+    </div>
+  </div>
 </div>

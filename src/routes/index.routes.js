@@ -1,54 +1,46 @@
-// Creo k este es mi *Controlador de Solicitudes archivo
+//*Controlador de Solicitudes *Protocolos de comiuncicacion
 import { Router } from "express";
 
 import Proyects from "../models/Task";
+import Usuarios from "../models/usuario";
 
-//ruta raiz,  ruta y archivo k carga
+const controllerIndex = require("../controllers/ControllerHome");
+const controllerShowdata = require("../controllers/controllerShowData");
+const controllerPost = require("../controllers/ControllerReceivingData");
+const conUpdate = require("../controllers/controllerUpdate");
+const conAdd = require("../controllers/controllerAdds");
+const newUpdate = require("../controllers/controllerUpdateData");
+const deletePro = require("../controllers/controllerDelete");
+
 const router = Router();
-router.get("/", (req, res) => {
-  res.status(200).render("index");
-});
 
-//obteniendo lista de objetos de la db.
-router.get("/edit", async (req, res) => {
-  const proyectos = await Proyects.find().lean();
+//ruta raiz, pagina de inicio principal
+router.get("/", controllerIndex.home);
 
-  res.render("edit", { proyectos: proyectos }); //Renderizo y emvio este objeto
-});
+/*      ------------------------------------------    */
+/*      --        Comienza el Crud             --    */
+/*      ------------------------------------------    */
+
+//Crear Nuevo Proyecto
+router.get("/agregar", conAdd.createNew);
+
+//obteniendo lista de objetos de la db y mostrarlos en la vista.
+router.get("/edit", controllerShowdata.showData);
 
 //Resibiendo datos de la vista POST formulario, y guardando en la db
-router.post("/edit", async (req, res) => {
-  try {
-    const task = Proyects(req.body);
-    console.log(task);
-    await task.save();
+router.post("/edit", controllerPost.postData);
 
-    res.redirect("/edit");
-  } catch (error) {
-    console.log(error);
-  }
-});
 //cuando visiten esta ruta respondo con el archivo edicion y sus params
-//para Actualizar proyectos respondo esta ruta
-router.get("/edicion/:_id?", async (req, res) => {
-  try {
-    var param = req.params._id;
+//Editar para actualizar proyecto
+router.get("/edicion/:_id?", conUpdate.updateData);
 
-    var projects = await Proyects.findById(param).lean();
-
-    res.render("edicion", { projects: projects }); //respuesta con pramaetros
-  } catch (error) {
-    console.log(error.message);
-  }
-});
 //Resibo datos actualizados de edicion get
-router.post("/edicion/:_op?", async (req, res) => {
-  const { _op } = req.params;
-  var body2 = req.body;
-  await Proyects.findByIdAndUpdate(_op, body2);
-  res.redirect("/edit");
-});
+router.post("/edicion/:id", newUpdate.updateDat);
 
+//borrar registros
+router.get("/delete/:_id?", deletePro.deleteProject);
+/*      ------------------------------------------    */
+/*         --     termina el Crud    */
 /*      ------------------------------------------    */
 
 router.get("/About", (req, res) => {
@@ -67,21 +59,41 @@ router.get("/contacto", (req, res) => {
   res.render("contacto");
 });
 
-router.get("/agregar", async (req, res) => {
-  const bodys = req.body;
-  console.log(bodys);
+//ruta para subir archivo
+router.get("/profile/:_id?", async (req, res) => {
+  var param5 = req.params._id;
+  console.log(`Es el ID get/profile ${param5}`);
 
-  res.render("agregar");
+  var projects3 = await Proyects.findById(param5).lean();
+
+  res.render("formfile", { projects: projects3 });
+});
+//Subir Archivos al servidor
+router.post("/profile/:_1id?", async (req, res) => {
+  var projectId = req.params._1id;
+
+  console.log(projectId);
+
+  res.render("update");
+});
+//WelcomeUser Get
+router.get("/welcomeUser", (req, res) => {
+  res.render("welcomeUser");
 });
 
-router.get("/delete/:_id?", async (req, res) => {
-  const { _id } = req.params;
-  console.log(_id);
-  var body2 = req.body;
-  console.log(body2);
-  await Proyects.findByIdAndDelete(_id, body2);
-  res.redirect("/edit");
+//WelcomeUser Post guardando datos de usuario
+router.post("/welcomeUser", async (req, res) => {
+  try {
+    const welcome = Usuarios(req.body);
+    console.log(welcome);
+    await welcome.save();
+
+    res.redirect("/welcomeUser");
+  } catch (error) {
+    console.log(error);
+  }
 });
+
 // exportamos esta funcion para utilizarlo en otros archivos
 
 export default router;
